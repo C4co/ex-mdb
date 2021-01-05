@@ -31,4 +31,6 @@ Just writing some code.
 
 ---
 
-c4co - 2020
+<p align="center">
+  C4co - 2020
+</p>
