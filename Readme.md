@@ -26,8 +26,8 @@ Just writing some code.
 
 ### Source
 
-[PHP](https://github.com/C4co/ex-mdb/tree/master/php)
-[Typescript](https://github.com/C4co/ex-mdb/tree/master/typescript)
+- [PHP](https://github.com/C4co/ex-mdb/tree/master/php)
+- [Typescript](https://github.com/C4co/ex-mdb/tree/master/typescript)
 
 ---
 
