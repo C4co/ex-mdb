@@ -11,7 +11,7 @@ Just writing some code.
 - Record data in ```.json``` format
 - Features: write, read, update, delete and query
 
-#### Interface
+### Interface
 
 ```typescript
   interface database {
@@ -24,7 +24,7 @@ Just writing some code.
   }
 ```
 
-#### Source
+### Source
 
 [PHP](https://github.com/C4co/ex-mdb/tree/master/php)
 [Typescript](https://github.com/C4co/ex-mdb/tree/master/typescript)
