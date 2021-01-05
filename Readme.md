@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="react" src="https://cdn.icon-icons.com/icons2/2334/PNG/512/box_cube_d_perspective_shape_icon_142362.png" width="80" />
+  <img alt="react" src="https://cdn.icon-icons.com/icons2/2334/PNG/512/box_cube_d_perspective_shape_icon_142362.png" width="100" />
 </p>
 
 <h1 align="center">
