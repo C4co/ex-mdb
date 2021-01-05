@@ -1,0 +1,24 @@
+{
+  "name": "micro/db",
+  "description": "php micro database",
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Carlos Costa",
+      "email": "carllos.nc@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "phpunit --colors=always --testdox"
+  },
+  "require": {
+    "phpunit/phpunit": "^9.5",
+    "wp-cli/php-cli-tools": "^0.11.11",
+    "league/climate": "^3.6",
+    "fzaninotto/faker": "^1.9"
+  }
+}
