@@ -1,5 +1,9 @@
-import { writeFileSync, readFileSync, existsSync, mkdirSync } from "fs"
-import { Utils } from "../utils/utils"
+import {
+  writeFileSync,
+  readFileSync,
+  existsSync,
+  mkdirSync
+} from "fs"
 
 export class Database {
   private _databasePath: string = ".database-temp"
@@ -32,13 +36,17 @@ export class Database {
         writeFileSync(this._databaseLocal, JSON.stringify({"data": []}))
       }
     }catch(error){
-      console.log("Check database", error.message)
+      console.log("Check database: ", error.message)
     }
+  }
+
+  private ID(){
+    return Math.random().toString(36).substring(3)
   }
 
   public add(element: any){
     if(!element.id){
-      element.id = Utils.ID()
+      element.id = this.ID()
     }
 
     try {
@@ -51,7 +59,7 @@ export class Database {
 
       return this
     } catch (error) {
-      console.log("Database create", error.message)
+      console.log("Database create ", error.message)
     }
   }
 
@@ -60,7 +68,7 @@ export class Database {
       const database = readFileSync(this._databaseLocal, "utf-8")
       return JSON.parse(database)
     } catch (error) {
-      console.log("Database Read:", error.message)
+      console.log("Database read: ", error.message)
     }
   }
 
@@ -79,7 +87,7 @@ export class Database {
 
       return result
     } catch (error){
-      console.log("Database search:", error.message)
+      console.log("Database search: ", error.message)
     }
   }
 
@@ -89,14 +97,14 @@ export class Database {
       const index = content.data.findIndex((item: any) => item.id === id)
 
       if(index === -1){
-        throw new Error(`Update: Element with id: ${id} not found`)
+        throw new Error(`Update: Element with id - ${id} not found`)
       }
 
       content.data[index] = {...content.data[index], ...newValue}
 
       writeFileSync(this._databaseLocal, JSON.stringify(content, null, 2))
     }catch(error){
-      console.log("Database update", error.message)
+      console.log("Database update: ", error.message)
     }
   }
 
@@ -106,14 +114,14 @@ export class Database {
       const index = content.data.findIndex((item: any) => item.id === id)
 
       if(index === -1){
-        throw new Error(`Delete: Element with id: ${id} not found`)
+        throw new Error(`Database delete: Element with id - ${id} not found`)
       }
 
       content.data.splice(index, 1)
 
       writeFileSync(this._databaseLocal, JSON.stringify(content, null, 2))
     }catch(error){
-      console.log("Database delete", error.message)
+      console.log("Database delete: ", error.message)
     }
   }
 }

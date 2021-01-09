@@ -66,10 +66,10 @@ describe("Database suite", () => {
     const db = new Database("mock-search-test")
 
     db.add({name: "foo"})
-    db.add({name: "bar"})
-    db.add({name: "span"})
-    db.add({name: "span"})
-    db.add({name: "fiz"})
+      .add({name: "bar"})
+      .add({name: "span"})
+      .add({name: "span"})
+      .add({name: "fiz"})
 
     const result1 = db.query((item: any) => item.name === "span")
     const result2 = db.query((item: any) => item.name === "bar")
@@ -91,9 +91,9 @@ describe("Database suite", () => {
     const db = new Database("mock-update-test")
 
     db.add({ name: "foo", id: 1 })
-    db.add({ name: "bar", id: 2 })
-    db.add({ name: "span", id: 3 })
-    db.add({ name: "egg", id: 4 })
+      .add({ name: "bar", id: 2 })
+      .add({ name: "span", id: 3 })
+      .add({ name: "egg", id: 4 })
 
     db.update(1, {
       name: "FOO UPDATED"
@@ -114,11 +114,11 @@ describe("Database suite", () => {
     const db = new Database("mock-delete-test")
 
     db.add({ name: "foo", id: 1 })
-    db.add({ name: "bar", id: 2 })
-    db.add({ name: "span", id: 3 })
-    db.add({ name: "egg", id: 4 })
-    db.add({ name: "fux", id: 5 })
-    db.add({ name: "max", id: 6 })
+      .add({ name: "bar", id: 2 })
+      .add({ name: "span", id: 3 })
+      .add({ name: "egg", id: 4 })
+      .add({ name: "fux", id: 5 })
+      .add({ name: "max", id: 6 })
 
     db.delete(1)
     db.delete(4)
