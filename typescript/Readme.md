@@ -2,13 +2,14 @@
 
 ## Usage
 
-Create Database
+**Create Database**
+
 ```typescript
 import { Database } from "./src/database/database"
 const db = new Database("my-db");
 ```
 
-Add data
+**Add data**
 
 ```add(data: object): this```
 
@@ -21,14 +22,14 @@ db.add({ name: "foo" })
   .add({ name: "max" })
 ```
 
-Get all data
+**Get all data**
 
 ```getAll(): {data: Array}```
 ```typescript
 const allData = db.getAll();
 ```
 
-Query
+**Query**
 
 ```query(condition: Function): object```
 ```typescript
@@ -37,7 +38,7 @@ Query
   const result3 = db.query((item: any) => item.name === "undefined")
 ```
 
-Update
+**Update**
 
 ```update(id: number | string, item: object): boolean```
 ```typescript
