@@ -1,5 +1,10 @@
 # EX-MDB - Typescript
 
+## Install
+```
+  npm install
+```
+
 ## Usage
 
 **Create Database**
@@ -33,9 +38,9 @@ const allData = db.getAll();
 
 ```query(condition: Function): object```
 ```typescript
-  const result1 = db.query((item: any) => item.name === "span")
-  const result2 = db.query((item: any) => item.name === "bar")
-  const result3 = db.query((item: any) => item.name === "undefined")
+const result1 = db.query((item: any) => item.name === "span")
+const result2 = db.query((item: any) => item.name === "bar")
+const result3 = db.query((item: any) => item.name === "undefined")
 ```
 
 **Update**
@@ -49,4 +54,10 @@ db.update(1, {
 db.update(3, {
   name: "SPAN UPDATED"
 })
+```
+
+## Tests
+
+```
+  npm test
 ```
