@@ -1,11 +1,11 @@
 # EX-MDB - Typescript
 
-## Install
+### Install
 ```
-  npm install
+npm install
 ```
 
-## Usage
+### Usage
 
 **Create Database**
 
@@ -36,7 +36,7 @@ const allData = db.getAll();
 
 **Query**
 
-```query(condition: Function): object```
+```query(condition(item: object): boolean): object```
 ```typescript
 const result1 = db.query((item: any) => item.name === "span")
 const result2 = db.query((item: any) => item.name === "bar")
@@ -56,8 +56,8 @@ db.update(3, {
 })
 ```
 
-## Tests
+### Tests
 
 ```
-  npm test
+npm test
 ```
