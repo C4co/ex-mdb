@@ -60,3 +60,9 @@ db.update(3, {
   name: "SPAN UPDATED"
 })
 ```
+
+**Delete**
+```delete(id: number | string): boolean```
+```
+db.delete(1)
+```
