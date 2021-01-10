@@ -29,17 +29,17 @@ class Database
 
     public function checkDatabase()
     {
-        try{
-            $db_model = Array("data" => []);
+        try {
+            $db_model = array("data" => []);
 
-            if(!is_dir($this->databasePath)){
+            if (!is_dir($this->databasePath)) {
                 mkdir($this->databasePath);
             }
 
-            if(!file_exists($this->databaseLocal)){
+            if (!file_exists($this->databaseLocal)) {
                 file_put_contents($this->databaseLocal, json_encode($db_model));
             }
-        }catch(Exception $error){
+        } catch (Exception $error) {
             echo "Database check -> " . $error->getMessage();
         }
     }
@@ -62,34 +62,34 @@ class Database
 
     public function getAll()
     {
-        try{
+        try {
             $content = json_decode(file_get_contents($this->databaseLocal));
 
             return $content;
-        }catch(Exception $error){
+        } catch (Exception $error) {
             echo "Database get all -> " . $error->getMessage();
         }
     }
 
     public function query(callable $condition)
     {
-        try{
+        try {
             $content = $this->getAll();
             $result = array_filter($content->data, $condition);
 
             return array_values($result);
-        }catch(Exception $error){
+        } catch (Exception $error) {
             echo "Database get all -> " . $error->getMessage();
         }
     }
 
     public function update(string $id, array $newValue)
     {
-        try{
+        try {
             $content = $this->getAll();
-            $element = array_filter($content->data, fn($item) => $item->id === $id);
+            $element = array_filter($content->data, fn ($item) => $item->id === $id);
 
-            if(count($element) === 0){
+            if (count($element) === 0) {
                 return false;
             }
 
@@ -98,18 +98,18 @@ class Database
             file_put_contents($this->databaseLocal, json_encode($content));
 
             return true;
-        }catch(Exception $error){
+        } catch (Exception $error) {
             echo "Database update -> " . $error->getMessage();
         }
     }
 
     public function delete($selected)
     {
-        try{
+        try {
             $content = $this->getAll();
-            $element = array_filter($content->data, fn($item) => $item->id === $selected->id);
+            $element = array_filter($content->data, fn ($item) => $item->id === $selected->id);
 
-            if(count($element) === 0){
+            if (count($element) === 0) {
                 return false;
             }
 
@@ -120,7 +120,7 @@ class Database
             file_put_contents($this->databaseLocal, json_encode($updatedContent));
 
             return true;
-        }catch(Exception $error){
+        } catch (Exception $error) {
             echo "Database delete -> " . $error->getMessage();
         }
     }
