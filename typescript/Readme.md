@@ -1,11 +1,16 @@
 # EX-MDB - Typescript
 
-### Install
+*Install*
 ```
 npm install
 ```
 
-### Usage
+*Running tests*
+```
+npm test
+```
+
+---
 
 **Create Database**
 
@@ -54,10 +59,4 @@ db.update(1, {
 db.update(3, {
   name: "SPAN UPDATED"
 })
-```
-
-### Tests
-
-```
-npm test
 ```
