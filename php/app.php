@@ -1,5 +1,7 @@
-<?php
-declare(strict_types=1);
-require "./vendor/autoload.php";
+<?php declare(strict_types=1);
+
+require __DIR__ . "./vendor/autoload.php";
+
+use App\Database\Database;
 
 $db = new Database("my-db");

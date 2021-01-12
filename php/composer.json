@@ -2,9 +2,9 @@
   "name": "micro/db",
   "description": "php micro database",
   "autoload": {
-    "classmap": [
-      "src/"
-    ]
+    "psr-4": {
+      "App\\": "src"
+    }
   },
   "authors": [
     {
