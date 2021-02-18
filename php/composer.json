@@ -13,12 +13,17 @@
     }
   ],
   "scripts": {
-    "test": "phpunit --colors=always --testdox"
+    "test": "phpunit --colors=always --testdox",
+    "start": "php -S localhost:8000"
+  },
+  "config": {
+    "process-timeout": 0
   },
   "require": {
     "phpunit/phpunit": "^9.5",
     "wp-cli/php-cli-tools": "^0.11.11",
     "league/climate": "^3.6",
-    "fzaninotto/faker": "^1.9"
+    "fzaninotto/faker": "^1.9",
+    "monolog/monolog": "^2.2"
   }
 }
